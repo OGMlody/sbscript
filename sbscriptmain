@@ -1,52 +1,54 @@
-game.StarterGui:SetCore(
-	"SendNotification",
-	{
-		Title = "SB Gui",
-		Text = "Loading . . .",
-	}
-)
-wait(1)
-game.StarterGui:SetCore(
-	"SendNotification",
-	{
-		Title = "SB Gui",
-		Text = "Authenticating..",
-	}
-)
-wait(1)
-game.StarterGui:SetCore(
-	"SendNotification",
-	{
-		Title = "SB Gui",
-		Text = "Setting Up...",
-	}
-)
-wait(1)
-game.StarterGui:SetCore(
-	"SendNotification",
-	{
-		Title = "South Bronx Script",
-		Text = "Loaded !",
-	}
-)
-wait(3)
- 
- local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/slattisbabygirl/cattoware/main/Wcatto.lua"))()
+local plrgui = game.Players.LocalPlayer.PlayerGui
+
+local function Logo()
+	local sg = Instance.new('ScreenGui', plrgui)
+	local Logo = Instance.new('TextLabel', sg)
+	Logo.Size = UDim2.new(0, 0, 0, 0)
+	Logo.Position = UDim2.new(0.5, 0, 0.448, 0)
+	Logo.AnchorPoint = Vector2.new(0.5, 0.5)  
+	Logo.Font = Enum.Font.Roboto
+	Logo.Text = "VEXUM"
+	Logo.TextColor3 = Color3.new(0.705882, 0.109804, 0.870588)
+	Logo.BackgroundTransparency = 1
+	Logo.TextScaled = true
+	Logo.TextTransparency = 1
+
+	Logo:TweenSize(UDim2.new(0, 380, 0, 95), Enum.EasingDirection.In, Enum.EasingStyle.Linear, 1, true)
+
+	for i = 1, 10 do
+		wait(0.1)
+		Logo.TextTransparency = Logo.TextTransparency - 0.1
+	end
+
+	wait(2)
+
+	for i = 1, 10 do
+		wait(0.1)
+		Logo.TextTransparency = Logo.TextTransparency + 0.1
+	end
+end
+
+Logo()
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/slattisbabygirl/cattoware/main/Wcatto.lua"))()
  
  local NotifyLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/Dynissimo/main/Scripts/AkaliNotif.lua"))()
     local Notify = NotifyLibrary.Notify
-    Library.theme.accentcolor = Color3.fromRGB(49, 253, 51)
-    Library.theme.accentcolor2 = Color3.fromRGB(49, 253, 51)
+    Library.theme.accentcolor = Color3.fromRGB(106, 4, 219)
+    Library.theme.accentcolor2 = Color3.fromRGB(106, 4, 219)
  
  
-    local Window = Library:CreateWindow("Mlody SB Gui", Vector2.new(492, 598), Enum.KeyCode.P)
+    local Window = Library:CreateWindow("VEXUM HUB | SOUTH BRONX", Vector2.new(492, 598), Enum.KeyCode.P)
  
-     local AimingTab = Window:CreateTab("Aiming")
+     local AimingTab = Window:CreateTab("AIMING | ❤️")
+
+     local EspTab = Window:CreateTab("ESP | 😍")
  
+
+
+     local sector1 = AimingTab:CreateSector("Join Our Discord | 💙", "left")
  
-     local sector1 = AimingTab:CreateSector("Join Our Discord", "left")
- 
-     sector1:AddButton("LINK SOON", function()
+     sector1:AddButton("LINK SOON | ❗", function()
      local Settings = {
     rewrittenmain = {
         Enabled = true,
@@ -314,7 +316,7 @@ local PredictionValue = 0.12642392
     end)
     end)
  
-local sector1 = AimingTab:CreateSector("Free Camlock", "right")
+local sector1 = AimingTab:CreateSector("Camlock | 🤓", "right")
  
 sector1:AddButton("Mlody's Camlock (Q)", function()
 getgenv().OldAimPart = "Head"
@@ -603,3 +605,4 @@ local plr = game.Players.LocalPlayer
                 end)
                 start()
             end)
+
